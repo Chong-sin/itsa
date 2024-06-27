@@ -1,12 +1,16 @@
-#include <stdio.h>
+#include <iostream>
+#include <iomanip> // 需要包含此標頭檔來使用 setprecision
 
-int main(){    
+using namespace std;
+
+int main() {
     int miles;
     double kilometers;
-    scanf("%d", &miles);
+    
+    cin >> miles; // 使用 >> 而不是 << 來讀取輸入
 
     kilometers = miles * 1.6;
-    printf("%.1f\n", kilometers);
+    cout << fixed << setprecision(1) << kilometers << endl; // 使用 kilometers 而不是 input
 
     return 0;
 }
