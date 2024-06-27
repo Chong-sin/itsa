@@ -1,27 +1,28 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-int main(){
+int main() {
     int inputN = 0, t[24] = {0}; 
-    scanf("%d", &inputN);
+    cin >> inputN;
 
-    for (int i = 0; i < inputN; i++){
+    for (int i = 0; i < inputN; i++) {
         int a = 0, b = 0;
-        scanf("%d %d", &a, &b);
+        cin >> a >> b;
 
-        for (int j = a - 1; j < b - 1; j++){
+        for (int j = a; j < b; j++) { // 使用 a 和 b 作為範圍
             t[j]++;
         }
     }
 
-    inputN = t[0];
+    int maxCount = 0; // 初始化為 0，而不是 t[0]
 
-    for (int i = 0; i < 24; i++){
-        if (inputN < t[i]){
-            inputN = t[i];
+    for (int i = 0; i < 24; i++) {
+        if (maxCount < t[i]) {
+            maxCount = t[i];
         }
     }
 
-    printf("%d\n", inputN);
+    cout << maxCount << endl;
 
     return 0;
 }
