@@ -9,7 +9,7 @@ int main(){
     if (inputNumber < -128 || inputNumber > 127) 
         return 1; 
     for (int i = 7; i >= 0; --i) {
-        int bit = (inputNumber >> i) & 1;
+        int bit = (inputNumber >> i) & 1;//取最右
         printf("%d", bit);
     }
 
