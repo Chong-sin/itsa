@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int gcd(int a, int b){
     while (b != 0){
@@ -12,10 +13,10 @@ int gcd(int a, int b){
 int main(){
     int num1, num2;
 
-    scanf("%d %d", &num1, &num2);
+   cin>>num1>>num2;
 
     int result = gcd(num1, num2);
-    printf("%d\n", result);
+   cout<<result<<endl;
 
     return 0;
 }
