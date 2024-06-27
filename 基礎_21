@@ -1,26 +1,29 @@
-#include <stdio.h>
+#include <iostream>
+#include <iomanip>
 
-int main(){
+int main() {
     float input, ar[10], max, min;
 
-    scanf("%f", &input);
+    std::cin >> input;
     max = input;
     min = input;
+    ar[0] = input;
 
-    for (int i = 1; i < 10; i++){
-        scanf("%f", &input);
+    for (int i = 1; i < 10; i++) {
+        std::cin >> input;
         ar[i] = input;
 
-        if (ar[i] > max){
+        if (ar[i] > max) {
             max = ar[i];
         }
 
-        if (ar[i] < min){
+        if (ar[i] < min) {
             min = ar[i];
         }
     }
-    printf("maximum:%.2f\n", max);
-    printf("minimum:%.2f\n", min);
+
+    std::cout << "maximum:" << std::fixed << std::setprecision(2) << max << std::endl;
+    std::cout << "minimum:" << std::fixed << std::setprecision(2) << min << std::endl;
 
     return 0;
 }
