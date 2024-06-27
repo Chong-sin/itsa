@@ -1,30 +1,33 @@
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <string>
 
-int main(){
-    char input[100], output[100];
-    int a = 1;
+int main() {
+    std::string input, output;
+    bool isPalindrome = true;
 
-    scanf("%s", input);
+    std::cin >> input;
 
     // Reverse the string and store it in 'output'
-    int length = strlen(input);
-    for (int i = length - 1; i >= 0; i--){
+    int length = input.length();
+    output.resize(length);
+    for (int i = length - 1; i >= 0; i--) {
         output[length - 1 - i] = input[i];
     }
 
     // Compare the original string with the reversed string
-    for (int j = 0; j < length; j++){
-        if (input[j] != output[j]){
-            a = 0;
+    for (int j = 0; j < length; j++) {
+        if (input[j] != output[j]) {
+            isPalindrome = false;
             break;
-        } else {
-            a = 1;
         }
     }
 
     // Output the result
-    a ? printf("YES\n") : printf("NO\n");
+    if (isPalindrome) {
+        std::cout << "YES" << std::endl;
+    } else {
+        std::cout << "NO" << std::endl;
+    }
 
     return 0;
 }
