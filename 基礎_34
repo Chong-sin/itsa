@@ -1,20 +1,22 @@
-#include <stdio.h>
+#include <iostream>
+#include <iomanip>
 
-int main(){
-    while (1){
+int main() {
+    while (true) {
         float h;
         int se;
 
-        if (scanf("%f %d", &h, &se) == EOF){
-            break; // 當輸入結束時退出迴圈
+        if (!(std::cin >> h >> se)) {
+            break; // Exit loop when input ends
         }
 
-        if (se == 1){
-            printf("%.1f\n", (h - 80) * 0.7);
+        if (se == 1) {
+            std::cout << std::fixed << std::setprecision(1) << (h - 80) * 0.7 << std::endl;
         } else {
-            printf("%.1f\n", (h - 70) * 0.6);
+            std::cout << std::fixed << std::setprecision(1) << (h - 70) * 0.6 << std::endl;
         }
     }
 
     return 0;
 }
+
