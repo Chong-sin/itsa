@@ -1,15 +1,20 @@
-#include <stdio.h>
+#include <iostream>
 
-int main(){
+int main() {
     int in = 0;
-    while (scanf("%d", &in) != EOF){
-        if (in % 400 == 0)
-            printf("Bissextile Year\n");
-        else {
-            if (in % 100 == 0)
-                printf("Common Year\n");
-            else
-                (in % 4 == 0) ? printf("Bissextile Year\n") : printf("Common Year\n");
+    while (std::cin >> in) {
+        if (in % 400 == 0) {
+            std::cout << "Bissextile Year" << std::endl;
+        } else {
+            if (in % 100 == 0) {
+                std::cout << "Common Year" << std::endl;
+            } else {
+                if (in % 4 == 0) {
+                    std::cout << "Bissextile Year" << std::endl;
+                } else {
+                    std::cout << "Common Year" << std::endl;
+                }
+            }
         }
     }
     return 0;
