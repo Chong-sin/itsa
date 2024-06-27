@@ -1,4 +1,5 @@
-#include <stdio.h>    
+#include <iostream>
+using namespace std; 
     
 int main(void){    
   int arr[100];    
@@ -7,16 +8,12 @@ int main(void){
   int n = 6;  
   int sum = 0;  
   while(n--){    
-    scanf("%d",&a);  
+    cin>>a;  
     arr[i++] = a * a * a;  
     sum += arr[i - 1];  
   }    
-  int j;    
-  // for(j = i-1; j >= 0; j--){    
-  //   if(j == i-1)    printf("%d",arr[j]);    
-  //   else    printf(" %d",arr[j]);    
-  // }    
-  printf("%d",sum);  
-  printf("\n");    
+  int j;     
+  cout<<sum<<endl;  
+
   return 0;    
 }  
