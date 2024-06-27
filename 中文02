@@ -1,17 +1,25 @@
-int main(void){    
-  int arr[100];    
-  int i = 0;    
-  int a;  
-  int n = 6;  
-  while (n--){    
-    scanf("%d",&a);  
-    arr[i++] = a;  
-  }    
-  int j;    
-  for (j = i-1; j >= 0; j--){    
-    if (j == i-1)    printf("%d",arr[j]);    
-    else    printf(" %d",arr[j]);    
-  }    
-  printf("\n");    
-  return 0;    
-} 
+#include <iostream>
+using namespace std;
+
+int main(void) {    
+    int arr[100];    
+    int i = 0;    
+    int a;  
+    int n = 6;  
+    
+    // 讀取 6 個整數輸入
+    while (n--) {    
+        cin >> a;  
+        arr[i++] = a;  
+    }    
+    
+    // 反向輸出陣列元素
+    for (int j = i - 1; j >= 0; j--) {    
+        cout << arr[j];    
+        if (j > 0) 
+            cout << " "; // 在元素之間加上空格
+    }    
+    cout << endl;    
+    
+    return 0;    
+}
