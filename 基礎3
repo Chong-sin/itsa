@@ -1,9 +1,14 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
+
 #define r 200
-int main(){
-   int x, y;
-   scanf("%d%d",&x, &y);
-   if(x * x + y * y > r * r)    printf("outside\n");
-   else    printf("inside\n");
+
+int main() {
+    int x, y;
+    cin >> x >> y;
+    if (x * x + y * y > r * r)
+        cout << "outside" << endl;
+    else
+        cout << "inside" << endl;
     return 0;
 }
