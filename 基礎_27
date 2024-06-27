@@ -1,8 +1,9 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main(){
     int an = 0, ana[4], ain[4];
-    scanf("%d", &an);
+    cin>>an;
 
     for (int i = 3; i >= 0; i--){
         ana[i] = 0;
@@ -13,7 +14,7 @@ int main(){
 
     while (1){
         int in = 0, a = 0, b = 0;
-        scanf("%d", &in);
+        cin>>in;
         an = 0;
 
         for (int i = 3; i >= 0; i--){
@@ -40,7 +41,7 @@ int main(){
         if (an == 4){
             break;
         } else {
-            printf("%dA%dB\n", a, b);
+           cout<<a<<"A"<<b<<"B"<<endl;
         }
     }
 
