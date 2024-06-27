@@ -1,0 +1,55 @@
+#include <iostream>
+
+struct Complex {
+    int real;
+    int imag;
+};
+
+Complex add(const Complex& a, const Complex& b) {
+    Complex result;
+    result.real = a.real + b.real;
+    result.imag = a.imag + b.imag;
+    return result;
+}
+
+Complex subtract(const Complex& a, const Complex& b) {
+    Complex result;
+    result.real = a.real - b.real;
+    result.imag = a.imag - b.imag;
+    return result;
+}
+
+Complex multiply(const Complex& a, const Complex& b) {
+    Complex result;
+    result.real = a.real * b.real - a.imag * b.imag;
+    result.imag = a.real * b.imag + a.imag * b.real;
+    return result;
+}
+
+int main() {
+    int n;
+    std::cin >> n;
+
+    for (int i = 0; i < n; ++i) {
+        char operation;
+        Complex num1, num2, result;
+
+        std::cin >> operation >> num1.real >> num1.imag >> num2.real >> num2.imag;
+
+        switch (operation) {
+            case '+':
+                result = add(num1, num2);
+                break;
+            case '-':
+                result = subtract(num1, num2);
+                break;
+            case '*':
+                result = multiply(num1, num2);
+                break;
+        }
+
+        std::cout << result.real << " " << result.imag << std::endl;
+    }
+
+    return 0;
+}
