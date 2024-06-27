@@ -1,9 +1,10 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main(){
     int N;
     int sum = 0;
-    scanf("%d", &N);
+    cin>>N;
     for (int i = 1; i <= N; ++i){
         if (i % 3 == 0){
             sum += i;
@@ -11,7 +12,7 @@ int main(){
     }
 
 
-    printf("%d\n",sum);
+    cout<<sum\n;
 
     return 0;
 }
