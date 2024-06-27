@@ -1,14 +1,18 @@
-#include <stdio.h>
+#include <iostream>
+#include <sstream>
+#include <string>
 
-int main(){
-    char input[100];
+int main() {
+    std::string input;
     int mon[4];
 
-    fgets(input, sizeof(input), stdin);
+    std::getline(std::cin, input);
+    std::stringstream ss(input);
 
-    sscanf(input, "%d,%d,%d,%d", &mon[0], &mon[1], &mon[2], &mon[3]);
+    char comma;
+    ss >> mon[0] >> comma >> mon[1] >> comma >> mon[2] >> comma >> mon[3];
 
-    if (mon[0] > mon[1] * 15 + mon[2] * 20 + mon[3] * 30){
+    if (mon[0] > mon[1] * 15 + mon[2] * 20 + mon[3] * 30) {
         mon[0] = mon[0] - mon[1] * 15 - mon[2] * 20 - mon[3] * 30;
 
         mon[2] = mon[0] / 50;
@@ -17,10 +21,10 @@ int main(){
         mon[1] = mon[0] / 5;
         mon[0] %= 5;
 
-        printf("%d,%d,%d\n", mon[0], mon[1], mon[2]);
+        std::cout << mon[0] << "," << mon[1] << "," << mon[2] << std::endl;
         return 0;
     } else {
-        printf("0\n");
+        std::cout << "0" << std::endl;
         return 0;
     }
 }
